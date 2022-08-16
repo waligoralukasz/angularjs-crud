@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="row">
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Szukaj</span>
+            <input ng-model="search" type="text" class="form-control" placeholder="Szukaj">
+
+            <select class="form-select" ng-model="order">
+                <option value="title_post">Alfabetycznie</option>
+                <option value="date_post">Data dodania</option>
+            </select> 
+            </div>
+            <a href="#/create" class="btn btn-success">Dodaj post</a>
+        <ul>
+            <li class="list-group-item m-3 p-3 bg-light border" ng-repeat="post in posts | filter: search | orderBy: order">
+                {{$index}}
+                <span>id: {{post.id}}</span>
+                <h2>{{post.title_post}}</h2> 
+                <p>{{post.desc_post}}</p>
+                <span>Data dodania: {{post.date_post}}</span>
+                
+                <hr>
+                <button class="btn btn-danger" ng-click="removePost(post, post.id)">Usuń</button>
+                <a href="#/edit/{{post.id}}" class="btn btn-success">Edytuj</a>
+            </li>
+        </ul>
+    </div>
+</div>

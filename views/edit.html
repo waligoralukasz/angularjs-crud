@@ -1,0 +1,59 @@
+<div class="container">
+    {{post.id}}
+    {{post.id_category}}
+    
+    <div class="row">
+        <form ng-submit="updatePost(post)">
+            <div class="mb-3">
+                <label>ID</label>
+                <input type="text" class="form-control" ng-model="post.id">
+            </div>
+            <div class="mb-3">
+                <label>Tytuł</label>
+                <input type="text" class="form-control" ng-model="post.title_post">
+            </div>
+            <div class="mb-3">
+                <label>Treść</label>
+                <textarea cols="30" rows="5" class="form-control" ng-model="post.desc_post"></textarea>
+            </div>
+            <div class="mb-3">
+                <label>Data</label>
+                <input type="text" value="2022-07-18 00:00:00" class="form-control" ng-model="post.date_post">
+            </div>
+            <div class="mb-3">
+                <label>Użytkownik</label>
+                <select class="form-control" ng-model="post.id_user">
+                    <option value="1">Łukasz</option>
+                    <option value="2">Piotr</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label>Kategoria</label>
+                <select class="form-control" ng-model="post.id_category">
+                    <option value="1">Sport</option>
+                    <option value="2">Polityka</option>
+                </select>
+            </div>
+
+
+            <input type="submit" value="Dodaj">
+        </form>
+            
+
+
+        <ul>
+            <li class="list-group-item m-3 p-3 bg-light border">
+                <span>Podgląd posta:</span>
+                <h2>{{post.title_post}}</h2> 
+                <p>{{post.desc_post}}</p>
+                <span>Data dodania: {{post.date_post}}</span>
+                <br>
+                <span>Użytkownik: {{post.id_user}}</span>
+                <br>
+                <span>Kategoria: {{post.id_category}}</span>
+               
+                
+            </li>
+        </ul>
+    </div>
+</div>
